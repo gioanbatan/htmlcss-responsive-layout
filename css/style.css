@@ -9,16 +9,75 @@ img {
     max-width: 100%;
 }
 
+
+/* Variables */
+:root {
+    /* Palette */
+    --std-blue: #0084fd;
+    --std-light-blue: #b5ddff;
+    --srd-violet: #9792e4;
+    --std-darkgray: #333333;
+    
+    /* Spaces and measures */
+    --header-height: 4.5rem;
+}
+
+/* COMMON */
+.container {
+    width: 100%;
+    padding: 0 1rem;
+}
+
 html {
     font-size: 100%;
     font-family: font-family: 'PT Sans', sans-serif;
 }
 
-/* COMMON */
-/* Palette */
-:root {
-    --std-blue: #0084fd;
-    --std-light-blue: #b5ddff;
-    --srd-violet: #9792e4;
-    --std-darkgray: #333333;
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 0 1rem;
+}
+/* HEADER */
+header {
+    background-color: var(--std-blue);
+}
+
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    line-height: var(--header-height);
+}
+
+#logo img{
+    display: block;
+}
+
+nav {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+}
+
+
+/* MEDIA QUERY */
+/* Tablet */
+@media screen and (min-width: 768px) {
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+    .hamburger-menu {
+        display: none;
+    }
+
+    nav {
+        display: block;
+    }
 }
