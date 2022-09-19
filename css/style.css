@@ -9,14 +9,14 @@ img {
     max-width: 100%;
 }
 
-
 /* Variables */
 :root {
     /* Palette */
     --std-blue: #0084fd;
     --std-light-blue: #b5ddff;
-    --srd-violet: #9792e4;
+    --std-violet: #9792e4;
     --std-darkgray: #333333;
+    --std-white: #ffffff;
     
     /* Spaces and measures */
     --header-height: 4.5rem;
@@ -36,6 +36,7 @@ img {
 .container {
     width: 100%;
     padding: 0 2rem;
+    margin: 0 auto;
 }
 
 
@@ -51,6 +52,18 @@ ul {
 li {
     padding: 0 1rem;
 }
+
+.card {
+    height: 100%;
+    text-align: center;
+    padding: 1.5rem;
+
+    background-color: var(--std-light-blue);
+    
+    /* DEBUG */
+    border: 1px dashed red;
+}
+
 /* HEADER */
 header {
     width: 100%;
@@ -86,30 +99,23 @@ nav ul {
 main {
     margin-top: calc(var(--header-height) + 3rem);
 }
-.features {
+
+#features {
     margin: 3rem 0 5rem;
 }
 
-.features .col {
+#features .col {
     margin-bottom: var(--card-margin);
 }
 
-.features .card {
-    height: 100%;
-    text-align: center;
-
-    background-color: var(--std-light-blue);
-    
-
-    /* DEBUG */
-    border: 1px dashed red;
-}
-
-.features .card-get-demo {
+#features .card-get-demo {
+    display: flex;
+    flex-direction: column;
     text-align: left;
+    padding: 0;
 }
 
-.card .card-text {
+.card-get-demo .card-text {
     padding: 1.5rem;
 
     /* DEBUG */
@@ -127,29 +133,52 @@ main {
     font-size: 5rem;
 }
 
+/* Strategic planning */
+#strategic-planning{
+    background-color: var(--std-violet);
+    padding: 4rem 0;
+}
 
+#strategic-planning .card {
+    background-color: var(--std-white);
+}
+
+#strategic-planning .card p {
+    text-align: center;
+}
+
+.planning-content * {
+    /* DEBUG */
+    margin: 2rem 0;
+}
 
 /* MEDIA QUERY */
+
 /* Tablet */
 @media screen and (min-width: 768px) {
     /* MAIN */
-    .features .row{
+    #features .row{
         display: flex;
         flex-wrap: wrap;
         column-gap: var(--card-margin);
     }
 
-    .features .col:first-child {
+    #features .col:first-child {
         width: calc(((100% / 3) * 2) - var(--card-margin));
     }
 
-    .features .col {
+    #features .col {
         width: calc((100% / 3) - var(--card-margin));
     }
 }
 
 /* Desktop */
 @media screen and (min-width: 992px) {
+    /* COMMON */
+    .container {
+        width: 90%;
+    }
+
     /* HEADER */
     .hamburger-menu {
         display: none;
@@ -160,16 +189,25 @@ main {
     }
 
     /* MAIN */
-    .features .card-get-demo {
-        display: flex;
+    /* Features */
+    #features .card-get-demo {
+        flex-direction: row;
     }
 
-    .features .card-get-demo .card-text,
-    .features .card-get-demo .card-image {
+    #features .card-get-demo .card-image {
+        align-self: flex-end;
+    }
+
+    #features .card-get-demo .card-text,
+    #features .card-get-demo .card-image {
         width: 50%;
     }
 
-    .features .card-image img {
-        /* height: 100%; */
+    /* Strategic planning  */
+    .planning-content {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-end;
     }
 }
