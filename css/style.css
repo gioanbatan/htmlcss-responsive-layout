@@ -20,17 +20,28 @@ img {
     
     /* Spaces and measures */
     --header-height: 4.5rem;
+    --card-margin: 1.5rem;
+}
+
+/* UTILITIES */
+.small-radius {
+    border-radius: 20px;
+}
+
+.big-radius {
+    border-radius: 50px;
 }
 
 /* COMMON */
 .container {
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
+
 
 html {
     font-size: 100%;
-    font-family: font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
 }
 
 ul {
@@ -42,6 +53,12 @@ li {
 }
 /* HEADER */
 header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
     background-color: var(--std-blue);
 }
 
@@ -65,19 +82,94 @@ nav ul {
     display: flex;
 }
 
+/* MAIN */
+main {
+    margin-top: calc(var(--header-height) + 3rem);
+}
+.features {
+    margin: 3rem 0 5rem;
+}
+
+.features .col {
+    margin-bottom: var(--card-margin);
+}
+
+.features .card {
+    height: 100%;
+    text-align: center;
+
+    background-color: var(--std-light-blue);
+    
+
+    /* DEBUG */
+    border: 1px dashed red;
+}
+
+.features .card-get-demo {
+    text-align: left;
+}
+
+.card .card-text {
+    padding: 1.5rem;
+
+    /* DEBUG */
+    border: 1px dashed red;
+}
+
+.card .card-image img {
+    display:block;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 250px;
+}
+
+.card i {
+    font-size: 5rem;
+}
+
+
 
 /* MEDIA QUERY */
 /* Tablet */
 @media screen and (min-width: 768px) {
+    /* MAIN */
+    .features .row{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: var(--card-margin);
+    }
+
+    .features .col:first-child {
+        width: calc(((100% / 3) * 2) - var(--card-margin));
+    }
+
+    .features .col {
+        width: calc((100% / 3) - var(--card-margin));
+    }
 }
 
 /* Desktop */
 @media screen and (min-width: 992px) {
+    /* HEADER */
     .hamburger-menu {
         display: none;
     }
 
     nav {
         display: block;
+    }
+
+    /* MAIN */
+    .features .card-get-demo {
+        display: flex;
+    }
+
+    .features .card-get-demo .card-text,
+    .features .card-get-demo .card-image {
+        width: 50%;
+    }
+
+    .features .card-image img {
+        /* height: 100%; */
     }
 }
