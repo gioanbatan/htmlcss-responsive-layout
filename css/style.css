@@ -26,7 +26,7 @@ img {
     --header-height: 4.5rem;
     --card-margin: 1.5rem;
     --quote-image-edge: 50vw;
-    --max-quote-image-edge: 200px
+    --max-quote-image-edge: 200px;
     --quote-small-image-edge: 40vw;
     --max-quote-small-image-edge: 170px
 }
@@ -43,6 +43,8 @@ img {
 /* COMMON */
 .container {
     width: 100%;
+    max-width: 1200px;
+
     padding: 0 2rem;
     margin: 0 auto;
 }
@@ -253,8 +255,12 @@ main {
 
 #about h2{
     color: var(--std-violet);
+    
+    padding-bottom: 3rem;
+}
 
-    padding-bottom: 1em;
+#about .about-text p {
+    padding-bottom: 3rem;
 }
 
 #about .quote {
@@ -263,8 +269,20 @@ main {
     font-weight: 700;
 }
 
-#about .quote-small-image {
+#about .quote figure {
+    padding-bottom: 2rem;
+}
+
+#about .quote-small-image  {
     position: relative;
+
+    width: var(--quote-small-image-edge);
+    height: var(--quote-small-image-edge);
+    max-width: var(--max-quote-small-image-edge);
+    max-height: var(--max-quote-small-image-edge);
+
+    /* DEBUG */
+    border: 1px dashed green;
 }
 
 #about .quote-small-image .quotation-marks {
@@ -273,16 +291,6 @@ main {
     right: 0;
 
     font-size: 4rem;
-}
-
-#about .quote-small-image  {
-    width: var(--quote-small-image-edge);
-    height: var(--quote-small-image-edge);
-    max-width: var(--max-quote-small-image-edge);
-    max-height: var(--max-quote-small-image-edge);
-
-    /* DEBUG */
-    border: 1px dashed green;
 }
 
 #about .quote-small-image img {
@@ -295,9 +303,10 @@ main {
     object-fit: cover;
 }
 
-#about p {
-    padding-bottom: 2rem;
+#about .quote p {
+    padding-bottom: 1.1rem;
 }
+
 
 /* cta section*/
 #cta {
@@ -308,32 +317,43 @@ main {
     background-color: var(--std-violet);
 }
 
-#cta * {
-    /* DEBUG */
-    padding-bottom: 1rem;
-}
-
 #cta h5 {
     display: block;
 
     font-size: 1.1rem;
     font-weight: 100;
     letter-spacing: 0.1rem;
+    padding-bottom: 1.1rem;
 
     color: var(--std-lightviolet);
 }
 
 #cta h3 {
     display: block;
+    padding-bottom: 1.3rem;
 }
 
-.free {
-    font-size: 3rem;
+#cta .free {
+    font-size: 3.8rem;
+    padding-bottom: 1.3rem;
+    
     color: var(--std-gold);
 }
 
-.cta-button {
+#cta p {
+    line-height: 1.8em;
+
+    padding-bottom: 1.7rem;
+}
+
+#cta .cta-button {
     display: block;
+
+    padding-bottom: 1.7rem;
+}
+
+#cta span {
+    font-size: 0.9rem;
 }
 
 /* FOOTER */
@@ -403,7 +423,59 @@ footer a {
     .benefits-cards .card:nth-child(odd) {
         margin-right: var(--card-margin);
     }
-}
+
+    /* About us */
+    #about .container {
+        width: 90%;
+    }
+
+    #about h2 {
+        font-size: 4.4rem;
+    }
+
+    #about .about-content {
+        display: flex;
+    }
+    
+    #about .about-text {
+        padding-right: 4em;
+    }
+
+    #about .quote-small-image {
+        width: calc(var(--quote-small-image-edge) + 15vw);
+        height: calc(var(--quote-small-image-edge) + 15vw);
+        max-width: calc(var(--max-quote-small-image-edge) + 70px);
+        max-height: calc(var(--max-quote-small-image-edge) + 70px);
+    }   
+    
+    #about .quote-small-image img {
+        width: calc(var(--quote-small-image-edge) + 10vw);
+        height: calc(var(--quote-small-image-edge) + 10vw);
+        max-width: calc(var(--max-quote-small-image-edge) + 70px);
+        max-height: calc(var(--max-quote-small-image-edge) + 70px);
+    }
+
+    /* cta */
+    #cta .container {
+        width: 75%;
+    }
+
+    #cta h3 {
+        font-size: 3rem;
+    }
+
+    #cta .free {
+        font-size: 6rem;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 1rem;
+    }
+    footer .container {
+        width: 75%;
+        }
+    }
 
 /* Desktop */
 @media screen and (min-width: 992px) {
@@ -443,7 +515,7 @@ footer a {
         display: flex;
     }
 
-    /* Working with us */
+    /* Working with us section*/
     #working-with-us .card {
         width: calc((100% - (var(--card-margin) * 2)) / 3);
     }
@@ -454,5 +526,23 @@ footer a {
 
     .benefits-cards .card:nth-child(3n) {
         margin-right: 0;
+    }
+
+    /* About us section */
+    #about .container {
+        width: 85%;
+        max-width: 1100px;
+    }
+    #about .about-text p {
+        font-size: 1.2rem;
+    }
+
+    #about .quote-small-image .quotation-marks {
+        font-size: 5rem;
+    }
+
+    /* cta section */
+    #cta .container {
+        width: 55%;
     }
 } 
