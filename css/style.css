@@ -21,6 +21,8 @@ img {
     /* Spaces and measures */
     --header-height: 4.5rem;
     --card-margin: 1.5rem;
+    --quote-image-edge: 50vw;
+    --max-quote-image-edge: 200px
 }
 
 /* UTILITIES */
@@ -152,11 +154,49 @@ main {
     margin: 2rem 0;
 }
 
+/* Testimonials */
+#testimonials {
+    text-align: center;
+    padding: 3rem 0 3rem;
+}
+
+#testimonials * {
+    /* DEBUG */
+    margin-bottom: 1rem;
+}
+
+#testimonials .card {
+    color: var(--std-white);
+    background-color: var(--std-violet);
+}
+
+.quote-image  {
+    width: var(--quote-image-edge);
+    height: var(--quote-image-edge);
+    max-width: var(--max-quote-image-edge);
+    max-height: var(--max-quote-image-edge);
+
+    border-radius: 50%;
+    /* overflow: hidden; */
+
+    margin: 0 auto;
+
+    /* DEBUG */
+    border: 1px dashed green;
+}
+
+.quote-image img {
+    object-fit: cover;
+    /* max-width: fit-content; */
+}
+
 /* MEDIA QUERY */
 
 /* Tablet */
 @media screen and (min-width: 768px) {
     /* MAIN */
+
+    /* Features */
     #features .row{
         display: flex;
         flex-wrap: wrap;
@@ -170,6 +210,19 @@ main {
     #features .col {
         width: calc((100% / 3) - var(--card-margin));
     }
+
+    /* Testimonials */
+    #testimonials .card {
+        display: flex;
+        align-items: flex-start;
+        
+        text-align: left;
+    }
+    
+    .quote-image {
+        flex-shrink: 0;
+    }
+    
 }
 
 /* Desktop */
@@ -208,6 +261,5 @@ main {
         width: 80%;
         margin: 0 auto;
         display: flex;
-        align-items: flex-end;
     }
-}
+} 
