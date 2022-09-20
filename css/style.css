@@ -13,10 +13,11 @@ img {
 :root {
     /* Palette */
     --std-blue: #0084fd;
-    --std-light-blue: #b5ddff;
+    --std-lightblue: #b5ddff;
     --std-violet: #9792e4;
     --std-darkgray: #333333;
     --std-white: #ffffff;
+    --std-lightgray: #737373;
     
     /* Spaces and measures */
     --header-height: 4.5rem;
@@ -60,7 +61,7 @@ li {
     text-align: center;
     padding: 1.5rem;
 
-    background-color: var(--std-light-blue);
+    background-color: var(--std-lightblue);
     
     /* DEBUG */
     border: 1px dashed red;
@@ -176,9 +177,6 @@ main {
     max-width: var(--max-quote-image-edge);
     max-height: var(--max-quote-image-edge);
 
-    border-radius: 50%;
-    /* overflow: hidden; */
-
     margin: 0 auto;
 
     /* DEBUG */
@@ -186,9 +184,41 @@ main {
 }
 
 .quote-image img {
+    width: var(--quote-image-edge);
+    height: var(--quote-image-edge);
+    max-width: var(--max-quote-image-edge);
+    max-height: var(--max-quote-image-edge);
+
+    border-radius: 50%;
     object-fit: cover;
-    /* max-width: fit-content; */
 }
+
+/* Working with us */
+#working-with-us {
+    color: var(--std-white);
+    background-color: var(--std-violet);
+    
+    text-align: center;
+    padding: 3rem 0 3rem;
+}
+
+#working-with-us * {
+    /* DEBUG */
+    margin-bottom: 1rem;
+}
+
+.benefits-cards .card {
+    color: var(--std-lightgray);
+    background-color: var(--std-white);
+    
+    text-align: left;
+}
+
+#testimonials {
+    text-align: center;
+    padding: 3rem 0 3rem;
+}
+
 
 /* MEDIA QUERY */
 
@@ -223,6 +253,19 @@ main {
         flex-shrink: 0;
     }
     
+    /* Working with us */
+    #working-with-us .benefits-cards {
+        display: flex;
+        flex-wrap: wrap;  
+    }
+
+    #working-with-us .card {
+        width: calc((100% - var(--card-margin)) / 2);
+    }
+
+    .benefits-cards .card:nth-child(odd) {
+        margin-right: var(--card-margin);
+    }
 }
 
 /* Desktop */
@@ -261,5 +304,19 @@ main {
         width: 80%;
         margin: 0 auto;
         display: flex;
+    }
+
+    /* Working with us */
+    #working-with-us .card {
+        width: calc((100% - (var(--card-margin) * 2)) / 3);
+    }
+
+    .benefits-cards .card {
+        margin-right: var(--card-margin);
+    }
+
+    .benefits-cards .card:nth-child(3n) {
+        background-color: #333333;
+        margin-right: 0;
     }
 } 
