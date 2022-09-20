@@ -15,15 +15,20 @@ img {
     --std-blue: #0084fd;
     --std-lightblue: #b5ddff;
     --std-violet: #9792e4;
+    --std-lightviolet: #d5d4f4;
     --std-darkgray: #333333;
     --std-white: #ffffff;
+    --std-black: #000000;
     --std-lightgray: #737373;
-    
+    --std-gold: #fdc15f;
+
     /* Spaces and measures */
     --header-height: 4.5rem;
     --card-margin: 1.5rem;
     --quote-image-edge: 50vw;
     --max-quote-image-edge: 200px
+    --quote-small-image-edge: 40vw;
+    --max-quote-small-image-edge: 170px
 }
 
 /* UTILITIES */
@@ -42,10 +47,17 @@ img {
     margin: 0 auto;
 }
 
-
 html {
     font-size: 100%;
     font-family: 'PT Sans', sans-serif;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3  {
+    font-size: 2rem;
 }
 
 ul {
@@ -54,6 +66,11 @@ ul {
 
 li {
     padding: 0 1rem;
+}
+
+a {
+    /* text-decoration: none; */
+    color: inherit;
 }
 
 .card {
@@ -103,6 +120,7 @@ main {
     margin-top: calc(var(--header-height) + 3rem);
 }
 
+/* Features section */
 #features {
     margin: 3rem 0 5rem;
 }
@@ -136,7 +154,7 @@ main {
     font-size: 5rem;
 }
 
-/* Strategic planning */
+/* Strategic planning section*/
 #strategic-planning{
     background-color: var(--std-violet);
     padding: 4rem 0;
@@ -155,10 +173,19 @@ main {
     margin: 2rem 0;
 }
 
-/* Testimonials */
+/* Testimonials section*/
 #testimonials {
     text-align: center;
     padding: 3rem 0 3rem;
+}
+
+#testimonials  h5 {
+    display: block;
+
+    font-size: 1.1rem;
+    font-weight: 100;
+
+    color: var(--std-black);
 }
 
 #testimonials * {
@@ -193,7 +220,7 @@ main {
     object-fit: cover;
 }
 
-/* Working with us */
+/* Working with us section*/
 #working-with-us {
     color: var(--std-white);
     background-color: var(--std-violet);
@@ -207,6 +234,7 @@ main {
     margin-bottom: 1rem;
 }
 
+/* Benefit section */
 .benefits-cards .card {
     color: var(--std-lightgray);
     background-color: var(--std-white);
@@ -214,9 +242,118 @@ main {
     text-align: left;
 }
 
-#testimonials {
+/* About us section */
+#about {
+    padding: 5rem 0 5rem;
+
+    font-size: 1.1rem;
+    line-height: 2.2em;
+    color: var(--std-black);
+}
+
+#about h2{
+    color: var(--std-violet);
+
+    padding-bottom: 1em;
+}
+
+#about .quote {
+    color: var(--std-violet);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#about .quote-small-image {
+    position: relative;
+}
+
+#about .quote-small-image .quotation-marks {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-size: 4rem;
+}
+
+#about .quote-small-image  {
+    width: var(--quote-small-image-edge);
+    height: var(--quote-small-image-edge);
+    max-width: var(--max-quote-small-image-edge);
+    max-height: var(--max-quote-small-image-edge);
+
+    /* DEBUG */
+    border: 1px dashed green;
+}
+
+#about .quote-small-image img {
+    width: var(--quote-small-image-edge);
+    height: var(--quote-small-image-edge);
+    max-width: var(--max-quote-small-image-edge);
+    max-height: var(--max-quote-small-image-edge);
+
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#about p {
+    padding-bottom: 2rem;
+}
+
+/* cta section*/
+#cta {
     text-align: center;
-    padding: 3rem 0 3rem;
+    padding: 5rem 0 5rem;
+
+    color: var(--std-white);
+    background-color: var(--std-violet);
+}
+
+#cta * {
+    /* DEBUG */
+    padding-bottom: 1rem;
+}
+
+#cta h5 {
+    display: block;
+
+    font-size: 1.1rem;
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+
+    color: var(--std-lightviolet);
+}
+
+#cta h3 {
+    display: block;
+}
+
+.free {
+    font-size: 3rem;
+    color: var(--std-gold);
+}
+
+.cta-button {
+    display: block;
+}
+
+/* FOOTER */
+footer {
+    padding: 2rem 0 2rem;
+
+    text-align: center;
+    
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--std-white);
+    background-color: var(--std-darkgray);
+}
+
+footer p {
+    padding-bottom: 4rem;
+}
+
+footer a {
+    color: var(--std-violet);
 }
 
 
@@ -316,7 +453,6 @@ main {
     }
 
     .benefits-cards .card:nth-child(3n) {
-        background-color: #333333;
         margin-right: 0;
     }
 } 
