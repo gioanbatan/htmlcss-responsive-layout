@@ -16,14 +16,15 @@ img {
     --std-lightblue: #b5ddff;
     --std-violet: #9792e4;
     --std-lightviolet: #d5d4f4;
-    --std-darkgray: #333333;
     --std-white: #ffffff;
     --std-black: #000000;
     --std-lightgray: #737373;
+    --std-grey: #5a6e7f;
+    --std-darkgray: #333333;
     --std-gold: #fdc15f;
 
     /* Spaces and measures */
-    --header-height: 4.5rem;
+    --header-height: 4.7rem;
     --card-margin: 1.5rem;
     --quote-image-edge: 50vw;
     --max-quote-image-edge: 200px;
@@ -58,8 +59,12 @@ h2 {
     font-size: 3rem;
 }
 
-h3  {
+h3 {
     font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
 }
 
 ul {
@@ -71,8 +76,13 @@ li {
 }
 
 a {
-    /* text-decoration: none; */
+    text-decoration: none;
     color: inherit;
+}
+
+button {
+    font-size: 100%;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .card {
@@ -84,6 +94,35 @@ a {
     
     /* DEBUG */
     border: 1px dashed red;
+}
+
+.btn-std {
+    padding: 0.45rem 1rem 0.45rem;
+    
+    background: var(--std-white);
+    color: var(--std-black);
+    text-decoration: none;
+
+    border: none;
+    border-radius: 1.5rem;
+
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+}
+
+.btn-weight-spacing {
+    padding: 0.6rem 3rem 0.6rem;
+    
+    background: var(--std-blue);
+    color: var(--std-white);
+    text-decoration: none;
+
+    border: none;
+    border-radius: 1.6rem;
+
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.09rem;
 }
 
 /* HEADER */
@@ -103,6 +142,10 @@ header {
     align-items: center;
     height: var(--header-height);
     line-height: var(--header-height);
+
+    color: var(--std-white);
+
+    font-size: 1.1rem;
 }
 
 #logo img{
@@ -117,14 +160,32 @@ nav ul {
     display: flex;
 }
 
+.hamburger-menu i {
+    font-size: 1.5rem;
+}
+
 /* MAIN */
 main {
-    margin-top: calc(var(--header-height) + 3rem);
+    margin-top: var(--header-height);
 }
 
 /* Features section */
 #features {
-    margin: 3rem 0 5rem;
+    padding: 3rem 0 5rem;
+}
+
+#features h4 {
+    color: var(--std-blue);
+
+    padding-bottom: 2rem;
+}
+
+#features p {
+    color: var(--std-grey);
+    line-height: 1.7rem;
+    font-weight: 700;
+
+    padding-bottom: 2rem;
 }
 
 #features .col {
@@ -152,8 +213,25 @@ main {
     max-width: 250px;
 }
 
-.card i {
+#features .card .card-text>i {
     font-size: 5rem;
+    color: var(--std-blue);
+    
+    padding-bottom: 1.7rem
+}
+/* #features .card .card-text i {
+
+} */
+
+#features .btn-weight-spacing i {
+    font-size: 1rem;
+    color: var(--std-white);
+}
+
+#features .card h3 {
+    color: var(--std-blue);
+
+    padding-bottom: 2rem;
 }
 
 /* Strategic planning section*/
@@ -384,6 +462,12 @@ footer a {
     /* MAIN */
 
     /* Features */
+    #features p,
+    #features button {
+        font-size: 1.1rem;
+        line-height: 1.9rem;
+    }
+
     #features .row{
         display: flex;
         flex-wrap: wrap;
